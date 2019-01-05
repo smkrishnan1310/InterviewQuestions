@@ -60,7 +60,9 @@ public class TicToe {
 	}
 
 	void startGame() {
-		Player player = X;
+		//Just to choose player randomly
+		int r = (int) (Math.random()*10 % 2);
+		Player player = (r == 1) ? X : O;
 		boolean gameOver = true;
 		while (!isBoardFull()) {
 			System.out.println(player.playerName + "( " + player.symbol + " ) - your turn ");
