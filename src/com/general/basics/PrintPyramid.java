@@ -16,29 +16,31 @@ public class PrintPyramid {
 		int mid = last / 2;
 		int j = 0;
 		int k = 0;
+		int st, end;
 		while (j < last) {
 			j = 0;
-			j = printRow(last, mid, j, k);
+			st = mid - k;
+			end = mid + k;
+			j = printRow(last, st, j, end);
 			k++;
 			System.out.println();
 		}
 
 	}
 
-	private static int printRow(int last, int mid, int j, int k) {
+	private static int printRow(int last, int st, int j, int end) {
 		for (int i = 0; i < last; i++) {
-			if (i <= (mid + k) && i >= (mid - k)) {
+			if (i <= end && i >= st) {
 				j++;
 				System.out.print("*");
-			}else {
+			} else 
 				System.out.print(" ");
-			}
 		}
 		return j;
 	}
 
 	public static void main(String[] args) {
-		printit(10);
+		printit(20);
 	}
 
 }
